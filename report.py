@@ -39,7 +39,7 @@ def add_indicators(df):
     dn = (-d.clip(upper=0)).ewm(alpha=1 / 14, adjust=False).mean()
     df["rsi"] = 100 - 100 / (1 + up / dn.replace(0, np.nan))
     macd = c.ewm(span=12, adjust=False).mean() - c.ewm(span=26, adjust=False).mean()
-    df["hist"] = macd - macd.ewm(span=9, adjust=False).mean()
+    df["mhist"] = macd - macd.ewm(span=9, adjust=False).mean()
     df["sma20"] = c.rolling(20).mean()
     df["std20"] = c.rolling(20).std()
     pc = c.shift()
@@ -59,8 +59,8 @@ def persona_trend(df):
 
 def persona_momentum(df):
     l, p = df.iloc[-1], df.iloc[-2]
-    strength = float(np.clip(l.hist / l.atr * 4, -1, 1))
-    score = 0.7 * strength + 0.3 * (1 if l.hist > p.hist else -1)
+    strength = float(np.clip(l.mhist / l.atr * 4, -1, 1))
+    score = 0.7 * strength + 0.3 * (1 if l.mhist > p.mhist else -1)
     return float(np.clip(score, -1, 1)), "الزخم صاعد" if score > 0 else "الزخم هابط"
 
 
