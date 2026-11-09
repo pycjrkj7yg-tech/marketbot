@@ -184,4 +184,21 @@ def build_report():
             "🗣️ آراء المحللين:",
         ]
         for n, s, why in best["votes"]:
-            icon = "🟢" if s > 0.15 else "🔴" if s 
+        icon = "🟢" if s > 0.15 else "🔴" if s < -0.15 else "⚪"
+            lines.append(f"{icon} {n}: {why}")
+    lines.append("\n📋 ترتيب الأسواق:")
+    for r in res[:6]:
+        lines.append(f"{'▲' if r['direction'] == 1 else '▼'} {r['symbol']} — ثقة {r['confidence']:.0f}%")
+    lines.append("\n⚠️ تحليل آلي وليس نصيحة مالية.")
+    return "\n".join(lines)
+
+
+if __name__ == "__main__":
+    text = build_report()
+    r = requests.post(
+        f"https://api.telegram.org/bot{TOKEN}/sendMessage",
+        data={"chat_id": CHAT_ID, "text": text},
+        timeout=30,
+    )
+    print(r.status_code, r.text[:200])
+    r.raise_for_status()
