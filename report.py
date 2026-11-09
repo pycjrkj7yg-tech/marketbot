@@ -184,7 +184,7 @@ def build_report():
             "🗣️ آراء المحللين:",
         ]
         for n, s, why in best["votes"]:
-        icon = "🟢" if s > 0.15 else "🔴" if s < -0.15 else "⚪"
+            icon = "🟢" if s > 0.15 else "🔴" if s < -0.15 else "⚪"
             lines.append(f"{icon} {n}: {why}")
     lines.append("\n📋 ترتيب الأسواق:")
     for r in res[:6]:
