@@ -3,6 +3,7 @@
 الأسعار من Yahoo Finance وقد تختلف قليلاً عن MT5، فاعتمد على النسب المئوية.
 تحليل آلي وليس نصيحة مالية.
 """
+import json
 import os
 import time
 from datetime import datetime, timedelta
@@ -34,6 +35,9 @@ MIN_CONFIDENCE = 35
 STALE_SECONDS = 3600          # أقدم من ساعة = السوق مغلق
 TZ = ZoneInfo("Africa/Algiers")
 SNAPSHOT_OFFSETS = [0, 1]     # شمعتان = 30 دقيقة
+STATE_FILE = "signals.json"
+MAX_AGE_SECONDS = 9 * 86400   # إشارة أقدم من 9 أيام تُهمل
+MAX_CLOSED = 300
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                   "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
@@ -209,7 +213,8 @@ def fmt(p):
     return f"{p:.5f}"
 
 
-def build_report():
+def build_report(stats_line=""):
+    """يرجع (نص التقرير أو None، الإشارة الجديدة أو None)"""
     res, stale, errors = [], 0, 0
     for name, tickers in MARKETS.items():
         status, data = analyze(name, tickers)
@@ -221,11 +226,12 @@ def build_report():
             errors += 1
     if not res:
         if errors == 0:
-            return None  # الأسواق مغلقة، لا نرسل شيئاً
-        return "⚠️ تعذر جلب بيانات الأسواق هذه المرة."
+            return None, None  # الأسواق مغلقة، لا نرسل شيئاً
+        return "⚠️ تعذر جلب بيانات الأسواق هذه المرة.", None
     res.sort(key=lambda r: r["confidence"], reverse=True)
     best = res[0]
     now = datetime.now(TZ)
+    signal = None
     lines = [f"📊 تقرير الـ30 دقيقة — {now:%Y-%m-%d %H:%M}\n"]
     if best["confidence"] < MIN_CONFIDENCE:
         lines.append("⚠️ لا توجد فرصة واضحة الآن. الأفضل الانتظار.\n")
@@ -236,6 +242,12 @@ def build_report():
         tp, sl = p + 2.5 * atr * d, p - 1.5 * atr * d
         tp_pct, sl_pct = 2.5 * atr / p * 100, 1.5 * atr / p * 100
         side = "شراء 🟢 (Buy)" if d == 1 else "بيع 🔴 (Sell)"
+        signal = {
+            "symbol": best["symbol"], "direction": d, "price": float(p),
+            "tp": float(tp), "sl": float(sl),
+            "entry_ts": int(entry.timestamp()), "expiry_ts": int(exit_t.timestamp()),
+            "confidence": round(float(best["confidence"]), 1),
+        }
         lines += [
             f"🏆 أفضل سوق: {best['symbol']}",
             f"الاتجاه: {side}",
@@ -254,19 +266,134 @@ def build_report():
     lines.append("\n📋 ترتيب الأسواق:")
     for r in res[:6]:
         lines.append(f"{'▲' if r['direction'] == 1 else '▼'} {r['symbol']} — ثقة {r['confidence']:.0f}%")
+    if stats_line:
+        lines.append("\n" + stats_line)
     lines.append("\n⚠️ تحليل آلي وليس نصيحة مالية.")
-    return "\n".join(lines)
+    return "\n".join(lines), signal
+
+
+# ===================== سجل النتائج =====================
+def load_state():
+    try:
+        with open(STATE_FILE, encoding="utf-8") as f:
+            st = json.load(f)
+        st.setdefault("open", [])
+        st.setdefault("closed", [])
+        return st
+    except Exception:
+        return {"open": [], "closed": []}
+
+
+def save_state(state):
+    state["closed"] = state["closed"][-MAX_CLOSED:]
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(state, f, ensure_ascii=False, indent=1)
+
+
+def evaluate_signal(sig, now_ts):
+    """يرجع (win|loss|expired|unknown, نسبة %) أو None إذا ما زالت مفتوحة"""
+    if now_ts - sig["entry_ts"] > MAX_AGE_SECONDS:
+        return "unknown", 0.0
+    df = fetch_candles(MARKETS[sig["symbol"]])
+    done = df[(df["ts"] >= sig["entry_ts"]) & (df["ts"] + CANDLE_MIN * 60 <= now_ts) & (df["ts"] < sig["expiry_ts"])]
+    d, price = sig["direction"], sig["price"]
+
+    def pct(level):
+        return (level - price) / price * 100 * d
+
+    for _, c in done.iterrows():
+        if d == 1:
+            hit_tp, hit_sl = c["high"] >= sig["tp"], c["low"] <= sig["sl"]
+        else:
+            hit_tp, hit_sl = c["low"] <= sig["tp"], c["high"] >= sig["sl"]
+        if hit_sl:  # إذا لمسهما معاً في شمعة واحدة نحسبها خسارة (حذر)
+            return "loss", pct(sig["sl"])
+        if hit_tp:
+            return "win", pct(sig["tp"])
+    if now_ts >= sig["expiry_ts"]:
+        if done.empty:
+            return "unknown", 0.0
+        return "expired", pct(float(done["close"].iloc[-1]))
+    return None
+
+
+def check_signals(state):
+    """يقيّم الإشارات المفتوحة، ويرجع نص الرسائل للإشارات التي أُغلقت"""
+    now_ts = int(time.time())
+    still_open, messages = [], []
+    for sig in state["open"]:
+        try:
+            outcome = evaluate_signal(sig, now_ts)
+        except Exception as e:
+            print("تعذر تقييم", sig.get("symbol"), e)
+            still_open.append(sig)
+            continue
+        if outcome is None:
+            still_open.append(sig)
+            continue
+        result, pnl = outcome
+        state["closed"].append({
+            "symbol": sig["symbol"], "direction": sig["direction"], "result": result,
+            "pnl": round(float(pnl), 3), "entry_ts": sig["entry_ts"],
+        })
+        side = "شراء" if sig["direction"] == 1 else "بيع"
+        t = datetime.fromtimestamp(sig["entry_ts"], TZ)
+        if result == "win":
+            verdict = f"✅ وصلت الهدف ({pnl:+.2f}%)"
+        elif result == "loss":
+            verdict = f"❌ ضربت وقف الخسارة ({pnl:+.2f}%)"
+        elif result == "expired":
+            verdict = f"⏱️ انتهى الوقت بدون هدف أو وقف ({pnl:+.2f}%)"
+        else:
+            verdict = "❔ تعذر التحقق من النتيجة"
+        messages.append(f"🔔 نتيجة إشارة سابقة\n{sig['symbol']} {side} — دخول {t:%m-%d %H:%M}\n{verdict}")
+    state["open"] = still_open
+    return messages
+
+
+def stats_text(state):
+    cl = state["closed"]
+    if not cl:
+        return ""
+    w = sum(1 for c in cl if c["result"] == "win")
+    l = sum(1 for c in cl if c["result"] == "loss")
+    e = sum(1 for c in cl if c["result"] == "expired")
+    total = round(sum(c["pnl"] for c in cl if c["result"] in ("win", "loss", "expired")), 2)
+    rate = f" | نسبة النجاح {w / (w + l) * 100:.0f}%" if (w + l) else ""
+    return f"📈 سجل الإشارات: ✅ {w} | ❌ {l} | ⏱️ {e}{rate} | المجموع {total:+.2f}%"
+
+
+def add_signal(state, sig, now_ts):
+    for s in state["open"]:
+        if s["symbol"] == sig["symbol"] and s["direction"] == sig["direction"] and s["expiry_ts"] > now_ts:
+            return  # إشارة مكررة لنفس السوق والاتجاه
+    state["open"].append(sig)
+
+
+def send(text):
+    r = requests.post(
+        f"https://api.telegram.org/bot{TOKEN}/sendMessage",
+        data={"chat_id": CHAT_ID, "text": text},
+        timeout=30,
+    )
+    print(r.status_code, r.text[:200])
+    r.raise_for_status()
 
 
 if __name__ == "__main__":
-    text = build_report()
+    state = load_state()
+    result_msgs = []
+    try:
+        result_msgs = check_signals(state)
+    except Exception as e:
+        print("خطأ في تقييم الإشارات:", e)
+    text, new_sig = build_report(stats_text(state))
+    if new_sig:
+        add_signal(state, new_sig, int(time.time()))
+    save_state(state)
+    for m in result_msgs:
+        send(m)
     if text is None:
         print("الأسواق مغلقة الآن، لا يوجد تقرير.")
     else:
-        r = requests.post(
-            f"https://api.telegram.org/bot{TOKEN}/sendMessage",
-            data={"chat_id": CHAT_ID, "text": text},
-            timeout=30,
-        )
-        print(r.status_code, r.text[:200])
-        r.raise_for_status()
+        send(text)
