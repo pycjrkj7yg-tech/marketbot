@@ -9,6 +9,16 @@
    "entry_ts": 1794397500,
    "expiry_ts": 1794401100,
    "confidence": 43.4
+  },
+  {
+   "symbol": "AUDUSD",
+   "direction": -1,
+   "price": 0.6863417625427246,
+   "tp": 0.6856563509611842,
+   "sl": 0.6867530094916489,
+   "entry_ts": 1794401100,
+   "expiry_ts": 1794404700,
+   "confidence": 44.3
   }
  ],
  "closed": [
