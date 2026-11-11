@@ -1,16 +1,6 @@
 {
  "open": [
   {
-   "symbol": "GBPJPY",
-   "direction": -1,
-   "price": 211.62899780273438,
-   "tp": 211.39223153887568,
-   "sl": 211.7710575610496,
-   "entry_ts": 1794386700,
-   "expiry_ts": 1794390300,
-   "confidence": 39.7
-  },
-  {
    "symbol": "XAUUSD",
    "direction": -1,
    "price": 4057.5,
@@ -70,6 +60,13 @@
    "result": "win",
    "pnl": 0.095,
    "entry_ts": 1794381300
+  },
+  {
+   "symbol": "GBPJPY",
+   "direction": -1,
+   "result": "expired",
+   "pnl": 0.031,
+   "entry_ts": 1794386700
   }
  ]
 }
