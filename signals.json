@@ -1,14 +1,14 @@
 {
  "open": [
   {
-   "symbol": "GBPJPY",
+   "symbol": "NZDUSD",
    "direction": -1,
-   "price": 211.8939971923828,
-   "tp": 211.6783004701084,
-   "sl": 212.02341522574747,
-   "entry_ts": 1794376800,
-   "expiry_ts": 1794380400,
-   "confidence": 36.3
+   "price": 0.5606324076652527,
+   "tp": 0.5600971230267772,
+   "sl": 0.560953578448338,
+   "entry_ts": 1794381300,
+   "expiry_ts": 1794384900,
+   "confidence": 39.7
   }
  ],
  "closed": [
@@ -46,6 +46,13 @@
    "result": "expired",
    "pnl": 0.035,
    "entry_ts": 1794330000
+  },
+  {
+   "symbol": "GBPJPY",
+   "direction": -1,
+   "result": "expired",
+   "pnl": 0.045,
+   "entry_ts": 1794376800
   }
  ]
 }
