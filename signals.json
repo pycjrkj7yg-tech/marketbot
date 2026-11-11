@@ -9,6 +9,16 @@
    "entry_ts": 1794386700,
    "expiry_ts": 1794390300,
    "confidence": 39.7
+  },
+  {
+   "symbol": "XAUUSD",
+   "direction": -1,
+   "price": 4057.5,
+   "tp": 4042.7211725914203,
+   "sl": 4066.367296445148,
+   "entry_ts": 1794390300,
+   "expiry_ts": 1794393900,
+   "confidence": 46.6
   }
  ],
  "closed": [
