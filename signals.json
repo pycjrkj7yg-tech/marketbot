@@ -1,14 +1,14 @@
 {
  "open": [
   {
-   "symbol": "EURUSD",
-   "direction": -1,
-   "price": 1.1050944328308105,
-   "tp": 1.1033991557926692,
-   "sl": 1.1061115990536954,
-   "entry_ts": 1794506400,
-   "expiry_ts": 1794510000,
-   "confidence": 36.4
+   "symbol": "USDCAD",
+   "direction": 1,
+   "price": 1.4259099960327148,
+   "tp": 1.4282753697868733,
+   "sl": 1.4244907717802198,
+   "entry_ts": 1794513600,
+   "expiry_ts": 1794517200,
+   "confidence": 35.3
   }
  ],
  "closed": [
@@ -130,6 +130,13 @@
    "result": "win",
    "pnl": 0.659,
    "entry_ts": 1794492000
+  },
+  {
+   "symbol": "EURUSD",
+   "direction": -1,
+   "result": "expired",
+   "pnl": -0.022,
+   "entry_ts": 1794506400
   }
  ]
 }
