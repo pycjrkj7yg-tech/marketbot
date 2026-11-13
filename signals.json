@@ -1,5 +1,16 @@
 {
- "open": [],
+ "open": [
+  {
+   "symbol": "GBPUSD",
+   "direction": -1,
+   "price": 1.3230488300323486,
+   "tp": 1.3220939228449824,
+   "sl": 1.3236217743447682,
+   "entry_ts": 1794545100,
+   "expiry_ts": 1794548700,
+   "confidence": 36.6
+  }
+ ],
  "closed": [
   {
    "symbol": "GBPJPY",
