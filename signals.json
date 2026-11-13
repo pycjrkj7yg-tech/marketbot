@@ -1,14 +1,14 @@
 {
  "open": [
   {
-   "symbol": "XAUUSD",
+   "symbol": "EURJPY",
    "direction": -1,
-   "price": 3885.60009765625,
-   "tp": 3863.984522430523,
-   "sl": 3898.569442791686,
-   "entry_ts": 1794580200,
-   "expiry_ts": 1794583800,
-   "confidence": 56.0
+   "price": 176.55799865722656,
+   "tp": 176.27719466562493,
+   "sl": 176.72648105218752,
+   "entry_ts": 1794583800,
+   "expiry_ts": 1794587400,
+   "confidence": 38.5
   }
  ],
  "closed": [
@@ -172,6 +172,13 @@
    "result": "loss",
    "pnl": -0.237,
    "entry_ts": 1794575700
+  },
+  {
+   "symbol": "XAUUSD",
+   "direction": -1,
+   "result": "loss",
+   "pnl": -0.334,
+   "entry_ts": 1794580200
   }
  ]
 }
