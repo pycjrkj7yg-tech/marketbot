@@ -1,5 +1,16 @@
 {
- "open": [],
+ "open": [
+  {
+   "symbol": "XAUUSD",
+   "direction": -1,
+   "price": 3848.10009765625,
+   "tp": 3827.754445854588,
+   "sl": 3860.3074887372472,
+   "entry_ts": 1794853800,
+   "expiry_ts": 1794857400,
+   "confidence": 65.5
+  }
+ ],
  "closed": [
   {
    "symbol": "GBPJPY",
