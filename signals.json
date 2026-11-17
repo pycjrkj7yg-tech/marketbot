@@ -3,12 +3,12 @@
   {
    "symbol": "USDJPY",
    "direction": -1,
-   "price": 159.34100341796875,
-   "tp": 159.13209842389628,
-   "sl": 159.46634641441224,
-   "entry_ts": 1794888000,
-   "expiry_ts": 1794891600,
-   "confidence": 37.3
+   "price": 159.11399841308594,
+   "tp": 158.89526780478013,
+   "sl": 159.24523677806943,
+   "entry_ts": 1794896100,
+   "expiry_ts": 1794899700,
+   "confidence": 47.5
   }
  ],
  "closed": [
@@ -256,6 +256,13 @@
    "result": "loss",
    "pnl": -0.09,
    "entry_ts": 1794884400
+  },
+  {
+   "symbol": "USDJPY",
+   "direction": -1,
+   "result": "expired",
+   "pnl": 0.059,
+   "entry_ts": 1794888000
   }
  ]
 }
