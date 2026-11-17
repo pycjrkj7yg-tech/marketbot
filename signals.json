@@ -1,16 +1,5 @@
 {
- "open": [
-  {
-   "symbol": "USDJPY",
-   "direction": -1,
-   "price": 159.11399841308594,
-   "tp": 158.89526780478013,
-   "sl": 159.24523677806943,
-   "entry_ts": 1794896100,
-   "expiry_ts": 1794899700,
-   "confidence": 47.5
-  }
- ],
+ "open": [],
  "closed": [
   {
    "symbol": "GBPJPY",
@@ -263,6 +252,13 @@
    "result": "expired",
    "pnl": 0.059,
    "entry_ts": 1794888000
+  },
+  {
+   "symbol": "USDJPY",
+   "direction": -1,
+   "result": "loss",
+   "pnl": -0.082,
+   "entry_ts": 1794896100
   }
  ]
 }
