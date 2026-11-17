@@ -1,14 +1,14 @@
 {
  "open": [
   {
-   "symbol": "NZDUSD",
+   "symbol": "USDJPY",
    "direction": -1,
-   "price": 0.5486968755722046,
-   "tp": 0.5478708270433524,
-   "sl": 0.5491925046895159,
-   "entry_ts": 1794884400,
-   "expiry_ts": 1794888000,
-   "confidence": 40.2
+   "price": 159.34100341796875,
+   "tp": 159.13209842389628,
+   "sl": 159.46634641441224,
+   "entry_ts": 1794888000,
+   "expiry_ts": 1794891600,
+   "confidence": 37.3
   }
  ],
  "closed": [
@@ -249,6 +249,13 @@
    "result": "loss",
    "pnl": -0.062,
    "entry_ts": 1794864600
+  },
+  {
+   "symbol": "NZDUSD",
+   "direction": -1,
+   "result": "loss",
+   "pnl": -0.09,
+   "entry_ts": 1794884400
   }
  ]
 }
