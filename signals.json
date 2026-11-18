@@ -9,6 +9,16 @@
    "entry_ts": 1794978900,
    "expiry_ts": 1794982500,
    "confidence": 40.1
+  },
+  {
+   "symbol": "EURJPY",
+   "direction": -1,
+   "price": 174.88600158691406,
+   "tp": 174.66933216742368,
+   "sl": 175.01600323860828,
+   "entry_ts": 1794982500,
+   "expiry_ts": 1794986100,
+   "confidence": 39.0
   }
  ],
  "closed": [
