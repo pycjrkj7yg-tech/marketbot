@@ -1,14 +1,14 @@
 {
  "open": [
   {
-   "symbol": "EURJPY",
+   "symbol": "GBPJPY",
    "direction": -1,
-   "price": 175.13499450683594,
-   "tp": 174.91403407591886,
-   "sl": 175.26757076538618,
-   "entry_ts": 1794974400,
-   "expiry_ts": 1794978000,
-   "confidence": 35.7
+   "price": 210.06300354003906,
+   "tp": 209.7740920415541,
+   "sl": 210.23635043913004,
+   "entry_ts": 1794978900,
+   "expiry_ts": 1794982500,
+   "confidence": 40.1
   }
  ],
  "closed": [
@@ -319,6 +319,13 @@
    "result": "expired",
    "pnl": 0.315,
    "entry_ts": 1794967200
+  },
+  {
+   "symbol": "EURJPY",
+   "direction": -1,
+   "result": "win",
+   "pnl": 0.126,
+   "entry_ts": 1794974400
   }
  ]
 }
