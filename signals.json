@@ -1,24 +1,14 @@
 {
  "open": [
   {
-   "symbol": "GBPJPY",
+   "symbol": "XAUUSD",
    "direction": -1,
-   "price": 210.06300354003906,
-   "tp": 209.7740920415541,
-   "sl": 210.23635043913004,
-   "entry_ts": 1794978900,
-   "expiry_ts": 1794982500,
-   "confidence": 40.1
-  },
-  {
-   "symbol": "EURJPY",
-   "direction": -1,
-   "price": 174.88600158691406,
-   "tp": 174.66933216742368,
-   "sl": 175.01600323860828,
-   "entry_ts": 1794982500,
-   "expiry_ts": 1794986100,
-   "confidence": 39.0
+   "price": 3774.60009765625,
+   "tp": 3753.773828245164,
+   "sl": 3787.0958593029018,
+   "entry_ts": 1794987000,
+   "expiry_ts": 1794990600,
+   "confidence": 36.9
   }
  ],
  "closed": [
@@ -336,6 +326,20 @@
    "result": "win",
    "pnl": 0.126,
    "entry_ts": 1794974400
+  },
+  {
+   "symbol": "GBPJPY",
+   "direction": -1,
+   "result": "expired",
+   "pnl": -0.032,
+   "entry_ts": 1794978900
+  },
+  {
+   "symbol": "EURJPY",
+   "direction": -1,
+   "result": "expired",
+   "pnl": 0.046,
+   "entry_ts": 1794982500
   }
  ]
 }
