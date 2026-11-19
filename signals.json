@@ -1,14 +1,14 @@
 {
  "open": [
   {
-   "symbol": "GBPUSD",
-   "direction": -1,
-   "price": 1.3100322484970093,
-   "tp": 1.3080708325024077,
-   "sl": 1.3112090980937703,
-   "entry_ts": 1795113000,
-   "expiry_ts": 1795116600,
-   "confidence": 41.0
+   "symbol": "USDCAD",
+   "direction": 1,
+   "price": 1.4332900047302246,
+   "tp": 1.436051519789173,
+   "sl": 1.4316330956948555,
+   "entry_ts": 1795117500,
+   "expiry_ts": 1795121100,
+   "confidence": 38.0
   }
  ],
  "closed": [
@@ -431,6 +431,13 @@
    "result": "loss",
    "pnl": -0.138,
    "entry_ts": 1795108500
+  },
+  {
+   "symbol": "GBPUSD",
+   "direction": -1,
+   "result": "expired",
+   "pnl": -0.025,
+   "entry_ts": 1795113000
   }
  ]
 }
