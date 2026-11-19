@@ -1,26 +1,5 @@
 {
- "open": [
-  {
-   "symbol": "USDCAD",
-   "direction": 1,
-   "price": 1.43503999710083,
-   "tp": 1.4371347316872463,
-   "sl": 1.4337831563489805,
-   "entry_ts": 1795057200,
-   "expiry_ts": 1795060800,
-   "confidence": 36.4
-  },
-  {
-   "symbol": "USDJPY",
-   "direction": 1,
-   "price": 159.59100341796875,
-   "tp": 159.78374621522104,
-   "sl": 159.47535773961738,
-   "entry_ts": 1795060800,
-   "expiry_ts": 1795064400,
-   "confidence": 40.3
-  }
- ],
+ "open": [],
  "closed": [
   {
    "symbol": "GBPJPY",
@@ -392,6 +371,20 @@
    "result": "expired",
    "pnl": -0.123,
    "entry_ts": 1795031100
+  },
+  {
+   "symbol": "USDCAD",
+   "direction": 1,
+   "result": "expired",
+   "pnl": 0.02,
+   "entry_ts": 1795057200
+  },
+  {
+   "symbol": "USDJPY",
+   "direction": 1,
+   "result": "expired",
+   "pnl": -0.011,
+   "entry_ts": 1795060800
   }
  ]
 }
