@@ -1,16 +1,5 @@
 {
- "open": [
-  {
-   "symbol": "USDCAD",
-   "direction": 1,
-   "price": 1.4332900047302246,
-   "tp": 1.436051519789173,
-   "sl": 1.4316330956948555,
-   "entry_ts": 1795117500,
-   "expiry_ts": 1795121100,
-   "confidence": 38.0
-  }
- ],
+ "open": [],
  "closed": [
   {
    "symbol": "GBPJPY",
@@ -438,6 +427,13 @@
    "result": "expired",
    "pnl": -0.025,
    "entry_ts": 1795113000
+  },
+  {
+   "symbol": "USDCAD",
+   "direction": 1,
+   "result": "expired",
+   "pnl": 0.067,
+   "entry_ts": 1795117500
   }
  ]
 }
