@@ -1,14 +1,14 @@
 {
  "open": [
   {
-   "symbol": "AUDUSD",
+   "symbol": "GBPUSD",
    "direction": -1,
-   "price": 0.6666666865348816,
-   "tp": 0.6651325463274015,
-   "sl": 0.6675871706593697,
-   "entry_ts": 1795108500,
-   "expiry_ts": 1795112100,
-   "confidence": 42.4
+   "price": 1.3100322484970093,
+   "tp": 1.3080708325024077,
+   "sl": 1.3112090980937703,
+   "entry_ts": 1795113000,
+   "expiry_ts": 1795116600,
+   "confidence": 41.0
   }
  ],
  "closed": [
@@ -424,6 +424,13 @@
    "result": "expired",
    "pnl": -0.057,
    "entry_ts": 1795104000
+  },
+  {
+   "symbol": "AUDUSD",
+   "direction": -1,
+   "result": "loss",
+   "pnl": -0.138,
+   "entry_ts": 1795108500
   }
  ]
 }
