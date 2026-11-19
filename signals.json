@@ -9,6 +9,16 @@
    "entry_ts": 1795057200,
    "expiry_ts": 1795060800,
    "confidence": 36.4
+  },
+  {
+   "symbol": "USDJPY",
+   "direction": 1,
+   "price": 159.59100341796875,
+   "tp": 159.78374621522104,
+   "sl": 159.47535773961738,
+   "entry_ts": 1795060800,
+   "expiry_ts": 1795064400,
+   "confidence": 40.3
   }
  ],
  "closed": [
