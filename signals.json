@@ -1,5 +1,16 @@
 {
- "open": [],
+ "open": [
+  {
+   "symbol": "USDCAD",
+   "direction": 1,
+   "price": 1.43503999710083,
+   "tp": 1.4371347316872463,
+   "sl": 1.4337831563489805,
+   "entry_ts": 1795057200,
+   "expiry_ts": 1795060800,
+   "confidence": 36.4
+  }
+ ],
  "closed": [
   {
    "symbol": "GBPJPY",
