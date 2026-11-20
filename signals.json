@@ -1,24 +1,14 @@
 {
  "open": [
   {
-   "symbol": "EURUSD",
+   "symbol": "USDCHF",
    "direction": -1,
-   "price": 1.0963709354400635,
-   "tp": 1.0951355531244467,
-   "sl": 1.0971121648294335,
-   "entry_ts": 1795173300,
-   "expiry_ts": 1795176900,
-   "confidence": 35.1
-  },
-  {
-   "symbol": "EURJPY",
-   "direction": -1,
-   "price": 174.04100036621094,
-   "tp": 173.65518512000227,
-   "sl": 174.27248951393614,
-   "entry_ts": 1795176900,
-   "expiry_ts": 1795180500,
-   "confidence": 49.4
+   "price": 0.839169979095459,
+   "tp": 0.8373432358088131,
+   "sl": 0.8402660250674465,
+   "entry_ts": 1795180500,
+   "expiry_ts": 1795184100,
+   "confidence": 39.3
   }
  ],
  "closed": [
@@ -490,6 +480,20 @@
    "result": "expired",
    "pnl": -0.027,
    "entry_ts": 1795169700
+  },
+  {
+   "symbol": "EURUSD",
+   "direction": -1,
+   "result": "expired",
+   "pnl": -0.022,
+   "entry_ts": 1795173300
+  },
+  {
+   "symbol": "EURJPY",
+   "direction": -1,
+   "result": "loss",
+   "pnl": -0.133,
+   "entry_ts": 1795176900
   }
  ]
 }
