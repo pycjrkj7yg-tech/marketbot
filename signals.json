@@ -1,16 +1,5 @@
 {
- "open": [
-  {
-   "symbol": "USDCHF",
-   "direction": -1,
-   "price": 0.839169979095459,
-   "tp": 0.8373432358088131,
-   "sl": 0.8402660250674465,
-   "entry_ts": 1795180500,
-   "expiry_ts": 1795184100,
-   "confidence": 39.3
-  }
- ],
+ "open": [],
  "closed": [
   {
    "symbol": "GBPJPY",
@@ -494,6 +483,13 @@
    "result": "loss",
    "pnl": -0.133,
    "entry_ts": 1795176900
+  },
+  {
+   "symbol": "USDCHF",
+   "direction": -1,
+   "result": "loss",
+   "pnl": -0.131,
+   "entry_ts": 1795180500
   }
  ]
 }
