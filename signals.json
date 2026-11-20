@@ -1,14 +1,14 @@
 {
  "open": [
   {
-   "symbol": "EURJPY",
+   "symbol": "EURUSD",
    "direction": -1,
-   "price": 173.92999267578125,
-   "tp": 173.57738416466654,
-   "sl": 174.14155778245006,
-   "entry_ts": 1795203900,
-   "expiry_ts": 1795207500,
-   "confidence": 39.1
+   "price": 1.096611499786377,
+   "tp": 1.0954818110006486,
+   "sl": 1.097289313057814,
+   "entry_ts": 1795208400,
+   "expiry_ts": 1795212000,
+   "confidence": 45.0
   }
  ],
  "closed": [
@@ -522,6 +522,13 @@
    "result": "expired",
    "pnl": 0.668,
    "entry_ts": 1795196700
+  },
+  {
+   "symbol": "EURJPY",
+   "direction": -1,
+   "result": "expired",
+   "pnl": 0.095,
+   "entry_ts": 1795203900
   }
  ]
 }
