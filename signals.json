@@ -1,5 +1,16 @@
 {
- "open": [],
+ "open": [
+  {
+   "symbol": "GBPJPY",
+   "direction": -1,
+   "price": 208.09800720214844,
+   "tp": 207.58384479018264,
+   "sl": 208.40650464932793,
+   "entry_ts": 1795169700,
+   "expiry_ts": 1795173300,
+   "confidence": 35.5
+  }
+ ],
  "closed": [
   {
    "symbol": "GBPJPY",
