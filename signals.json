@@ -9,6 +9,16 @@
    "entry_ts": 1795169700,
    "expiry_ts": 1795173300,
    "confidence": 35.5
+  },
+  {
+   "symbol": "EURUSD",
+   "direction": -1,
+   "price": 1.0963709354400635,
+   "tp": 1.0951355531244467,
+   "sl": 1.0971121648294335,
+   "entry_ts": 1795173300,
+   "expiry_ts": 1795176900,
+   "confidence": 35.1
   }
  ],
  "closed": [
