@@ -1,16 +1,5 @@
 {
- "open": [
-  {
-   "symbol": "EURUSD",
-   "direction": -1,
-   "price": 1.096611499786377,
-   "tp": 1.0954818110006486,
-   "sl": 1.097289313057814,
-   "entry_ts": 1795208400,
-   "expiry_ts": 1795212000,
-   "confidence": 45.0
-  }
- ],
+ "open": [],
  "closed": [
   {
    "symbol": "GBPJPY",
@@ -529,6 +518,13 @@
    "result": "expired",
    "pnl": 0.095,
    "entry_ts": 1795203900
+  },
+  {
+   "symbol": "EURUSD",
+   "direction": -1,
+   "result": "expired",
+   "pnl": -0.044,
+   "entry_ts": 1795208400
   }
  ]
 }
