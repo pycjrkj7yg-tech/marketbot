@@ -9,6 +9,16 @@
    "entry_ts": 1795189500,
    "expiry_ts": 1795193100,
    "confidence": 74.2
+  },
+  {
+   "symbol": "NZDUSD",
+   "direction": -1,
+   "price": 0.5487570762634277,
+   "tp": 0.5477063335507129,
+   "sl": 0.5493875218910567,
+   "entry_ts": 1795193100,
+   "expiry_ts": 1795196700,
+   "confidence": 48.9
   }
  ],
  "closed": [
