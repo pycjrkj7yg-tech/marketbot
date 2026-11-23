@@ -1,14 +1,14 @@
 {
  "open": [
   {
-   "symbol": "NZDUSD",
-   "direction": -1,
-   "price": 0.5462689995765686,
-   "tp": 0.5455821134895459,
-   "sl": 0.5466811312287823,
-   "entry_ts": 1795437900,
-   "expiry_ts": 1795441500,
-   "confidence": 40.6
+   "symbol": "XAUUSD",
+   "direction": 1,
+   "price": 3668.800048828125,
+   "tp": 3698.469030543384,
+   "sl": 3650.9986597989696,
+   "entry_ts": 1795444200,
+   "expiry_ts": 1795447800,
+   "confidence": 59.2
   }
  ],
  "closed": [
@@ -557,6 +557,13 @@
    "result": "expired",
    "pnl": -0.083,
    "entry_ts": 1795424400
+  },
+  {
+   "symbol": "NZDUSD",
+   "direction": -1,
+   "result": "win",
+   "pnl": 0.126,
+   "entry_ts": 1795437900
   }
  ]
 }
