@@ -1,5 +1,16 @@
 {
- "open": [],
+ "open": [
+  {
+   "symbol": "NZDUSD",
+   "direction": -1,
+   "price": 0.5462689995765686,
+   "tp": 0.5455821134895459,
+   "sl": 0.5466811312287823,
+   "entry_ts": 1795437900,
+   "expiry_ts": 1795441500,
+   "confidence": 40.6
+  }
+ ],
  "closed": [
   {
    "symbol": "GBPJPY",
