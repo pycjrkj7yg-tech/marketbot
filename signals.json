@@ -1,5 +1,16 @@
 {
- "open": [],
+ "open": [
+  {
+   "symbol": "USDCHF",
+   "direction": -1,
+   "price": 0.8394500017166138,
+   "tp": 0.8378560706178138,
+   "sl": 0.8404063603758938,
+   "entry_ts": 1795401900,
+   "expiry_ts": 1795405500,
+   "confidence": 37.4
+  }
+ ],
  "closed": [
   {
    "symbol": "GBPJPY",
