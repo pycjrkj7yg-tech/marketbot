@@ -1,14 +1,14 @@
 {
  "open": [
   {
-   "symbol": "USDCAD",
+   "symbol": "XAUUSD",
    "direction": -1,
-   "price": 1.4290599822998047,
-   "tp": 1.4260102341212502,
-   "sl": 1.4308898312069374,
-   "entry_ts": 1795533300,
-   "expiry_ts": 1795536900,
-   "confidence": 36.2
+   "price": 3568.5,
+   "tp": 3536.953447661643,
+   "sl": 3587.427931403014,
+   "entry_ts": 1795536900,
+   "expiry_ts": 1795540500,
+   "confidence": 37.5
   }
  ],
  "closed": [
@@ -592,6 +592,13 @@
    "result": "loss",
    "pnl": -0.411,
    "entry_ts": 1795528800
+  },
+  {
+   "symbol": "USDCAD",
+   "direction": -1,
+   "result": "loss",
+   "pnl": -0.128,
+   "entry_ts": 1795533300
   }
  ]
 }
