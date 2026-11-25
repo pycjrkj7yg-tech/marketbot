@@ -1,26 +1,5 @@
 {
- "open": [
-  {
-   "symbol": "EURUSD",
-   "direction": 1,
-   "price": 1.0990219116210938,
-   "tp": 1.100931238624228,
-   "sl": 1.0978763154192133,
-   "entry_ts": 1795627800,
-   "expiry_ts": 1795631400,
-   "confidence": 39.1
-  },
-  {
-   "symbol": "EURJPY",
-   "direction": 1,
-   "price": 174.73199462890625,
-   "tp": 175.11781385761128,
-   "sl": 174.50050309168324,
-   "entry_ts": 1795631400,
-   "expiry_ts": 1795635000,
-   "confidence": 42.9
-  }
- ],
+ "open": [],
  "closed": [
   {
    "symbol": "GBPJPY",
@@ -665,6 +644,20 @@
    "result": "win",
    "pnl": 1.093,
    "entry_ts": 1795617900
+  },
+  {
+   "symbol": "EURUSD",
+   "direction": 1,
+   "result": "expired",
+   "pnl": -0.022,
+   "entry_ts": 1795627800
+  },
+  {
+   "symbol": "EURJPY",
+   "direction": 1,
+   "result": "expired",
+   "pnl": 0.049,
+   "entry_ts": 1795631400
   }
  ]
 }
