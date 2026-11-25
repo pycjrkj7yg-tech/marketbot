@@ -3,12 +3,12 @@
   {
    "symbol": "XAUUSD",
    "direction": -1,
-   "price": 3524.39990234375,
-   "tp": 3500.7183837081075,
-   "sl": 3538.6088135251357,
-   "entry_ts": 1795588200,
-   "expiry_ts": 1795591800,
-   "confidence": 35.2
+   "price": 3527.0,
+   "tp": 3503.9076135019145,
+   "sl": 3540.8554318988513,
+   "entry_ts": 1795594500,
+   "expiry_ts": 1795598100,
+   "confidence": 37.8
   }
  ],
  "closed": [
@@ -634,6 +634,13 @@
    "result": "win",
    "pnl": 0.618,
    "entry_ts": 1795584600
+  },
+  {
+   "symbol": "XAUUSD",
+   "direction": -1,
+   "result": "expired",
+   "pnl": 0.108,
+   "entry_ts": 1795588200
   }
  ]
 }
