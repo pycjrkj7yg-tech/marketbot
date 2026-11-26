@@ -1,5 +1,16 @@
 {
- "open": [],
+ "open": [
+  {
+   "symbol": "AUDUSD",
+   "direction": 1,
+   "price": 0.6643635034561157,
+   "tp": 0.6650700190600947,
+   "sl": 0.6639395940937284,
+   "entry_ts": 1795703400,
+   "expiry_ts": 1795707000,
+   "confidence": 43.3
+  }
+ ],
  "closed": [
   {
    "symbol": "GBPJPY",
