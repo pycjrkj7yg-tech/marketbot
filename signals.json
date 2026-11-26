@@ -1,5 +1,16 @@
 {
- "open": [],
+ "open": [
+  {
+   "symbol": "EURJPY",
+   "direction": 1,
+   "price": 174.81399536132812,
+   "tp": 175.0570724899231,
+   "sl": 174.66814908417115,
+   "entry_ts": 1795689900,
+   "expiry_ts": 1795693500,
+   "confidence": 43.5
+  }
+ ],
  "closed": [
   {
    "symbol": "GBPJPY",
