@@ -1,16 +1,5 @@
 {
- "open": [
-  {
-   "symbol": "GBPJPY",
-   "direction": 1,
-   "price": 209.3159942626953,
-   "tp": 209.58895092508251,
-   "sl": 209.152220265263,
-   "entry_ts": 1795770900,
-   "expiry_ts": 1795774500,
-   "confidence": 37.7
-  }
- ],
+ "open": [],
  "closed": [
   {
    "symbol": "GBPJPY",
@@ -725,6 +714,13 @@
    "result": "loss",
    "pnl": -0.064,
    "entry_ts": 1795761900
+  },
+  {
+   "symbol": "GBPJPY",
+   "direction": 1,
+   "result": "expired",
+   "pnl": 0.038,
+   "entry_ts": 1795770900
   }
  ]
 }
